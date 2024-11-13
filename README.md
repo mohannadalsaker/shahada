@@ -10,6 +10,10 @@ difiiculty.
 
 The website supports dark and light mode.
 
+It also allows you to repeat what the website says in the Shahada as many time as you want
+
+Preferably to sit in a non-noisy room to avoid getting wrong words
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
