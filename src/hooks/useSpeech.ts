@@ -42,17 +42,13 @@ const useSpeech = () => {
   };
 
   const handleResponse = () => {
-    let temp = false;
-
     let response = "";
 
     if (transcript.toLowerCase().includes(steps[currentStep].toLowerCase()!)) {
       stopListening();
       response = currentLang?.congrats!;
-      temp = true;
       goNextStep();
     } else {
-      temp = false;
       stopListening();
       resetTranscript();
       setShowError(true);
