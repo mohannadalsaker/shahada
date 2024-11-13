@@ -71,6 +71,7 @@ const useSpeech = () => {
     transcript,
     listening,
     currentLang,
+    isBrowserSupport: SpeechRecognition.browserSupportsSpeechRecognition(),
     speak,
     startListening,
     stopListening,

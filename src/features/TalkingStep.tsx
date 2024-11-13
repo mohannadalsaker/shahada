@@ -11,13 +11,21 @@ import PrimaryButton from "../components/PrimaryButton";
 import { ThemContext, ThemContextType } from "../context/ThemeContextProvider";
 
 const TalkingStep = () => {
-  const { listening, speak, stopListening, startListening } = useSpeech();
+  const { listening, speak, stopListening, startListening, isBrowserSupport } =
+    useSpeech();
   const { currentStep, steps } = useContext(StepsContext) as StepsContextType;
   const { theme } = useContext(ThemContext) as ThemContextType;
 
   useEffect(() => {
     speak(steps[currentStep]);
   }, [currentStep]);
+
+  if (isBrowserSupport)
+    return (
+      <h1 className="text-3xl max-md:text-xl font-semibold text-center text-primary-light dark:text-primary-dark ">
+        your browser does not support this feature
+      </h1>
+    );
 
   return (
     <div className="flex flex-col items-center gap-14 pb-5">
