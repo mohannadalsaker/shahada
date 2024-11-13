@@ -15,11 +15,9 @@ const Navbar = () => {
         {navbarLinks.map((navLink) => (
           <li
             key={navLink.link}
-            className="text-sm font-bold text-primary-light dark:text-primary-dark uppercase"
+            className="text-sm font-bold cursor-pointer text-primary-light dark:text-primary-dark uppercase"
           >
-            <a href={navLink.link} className="no-underline">
-              {navLink.label}
-            </a>
+            {navLink.label}
           </li>
         ))}
       </ul>
@@ -41,14 +39,9 @@ const Navbar = () => {
                 {navbarLinks.map((navLink) => (
                   <li
                     key={navLink.link}
-                    className="text-sm text-nowrap p-4 font-bold text-primary-light dark:text-primary-dark uppercase hover:bg-primary-light hover:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light"
+                    className="text-sm cursor-pointer text-nowrap p-4 font-bold text-primary-light dark:text-primary-dark uppercase hover:bg-primary-light hover:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light transition-all duration-300"
                   >
-                    <a
-                      href={navLink.link}
-                      className="no-underline cursor-pointer"
-                    >
-                      {navLink.label}
-                    </a>
+                    {navLink.label}
                   </li>
                 ))}
               </ul>
