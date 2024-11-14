@@ -17,10 +17,10 @@ const TalkingStep = () => {
   const { theme } = useContext(ThemContext) as ThemContextType;
 
   useEffect(() => {
-    speak(steps[currentStep]);
+    if (isBrowserSupport) speak(steps[currentStep]);
   }, [currentStep]);
 
-  if (isBrowserSupport)
+  if (!isBrowserSupport)
     return (
       <h1 className="text-3xl max-md:text-xl font-semibold text-center text-primary-light dark:text-primary-dark ">
         your browser does not support this feature
